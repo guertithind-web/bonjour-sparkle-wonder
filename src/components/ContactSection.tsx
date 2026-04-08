@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
@@ -23,84 +23,93 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-36">
+    <section id="contact" className="py-24 md:py-36 bg-secondary/60">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <p className="text-primary font-bold text-sm uppercase tracking-[0.2em] mb-4">Contact</p>
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight">
-            Parlons de votre projet
+            Contactez-nous
           </h2>
-          <p className="text-muted-foreground mt-5 max-w-xl mx-auto text-lg">
-            Remplissez le formulaire ci-dessous et un expert vous contactera sous 24h.
-          </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-2"
-          >
-            <Card className="border border-border/60 rounded-2xl shadow-lg shadow-primary/[0.03]">
-              <CardContent className="p-10">
-                <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-6">
-                  <div className="space-y-2.5">
-                    <Label htmlFor="name" className="text-sm font-semibold">Nom & Prénom</Label>
-                    <Input id="name" placeholder="Mohammed Alami" required maxLength={100} className="h-12 rounded-xl" />
-                  </div>
-                  <div className="space-y-2.5">
-                    <Label htmlFor="email" className="text-sm font-semibold">Email</Label>
-                    <Input id="email" type="email" placeholder="email@exemple.ma" required maxLength={255} className="h-12 rounded-xl" />
-                  </div>
-                  <div className="space-y-2.5">
-                    <Label htmlFor="phone" className="text-sm font-semibold">Téléphone</Label>
-                    <Input id="phone" type="tel" placeholder="+212 6XX XXX XXX" required className="h-12 rounded-xl" />
-                  </div>
-                  <div className="space-y-2.5">
-                    <Label htmlFor="volume" className="text-sm font-semibold">Volume de transactions</Label>
-                    <Input id="volume" placeholder="Ex: 50 000 MAD/mois" className="h-12 rounded-xl" />
-                  </div>
-                  <div className="space-y-2.5 sm:col-span-2">
-                    <Label htmlFor="message" className="text-sm font-semibold">Message</Label>
-                    <Textarea id="message" placeholder="Décrivez votre besoin..." rows={5} required maxLength={1000} className="rounded-xl" />
-                  </div>
-                  <div className="sm:col-span-2">
-                    <Button type="submit" size="lg" className="w-full h-14 text-base gap-2.5 rounded-xl bg-gradient-brand shadow-brand hover:shadow-brand-lg transition-shadow duration-300 font-bold" disabled={loading}>
-                      <Send className="h-5 w-5" />
-                      {loading ? "Envoi en cours..." : "Envoyer"}
-                    </Button>
-                  </div>
-                </form>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="space-y-8 pt-2"
-          >
-            {[
-              { icon: Phone, label: "Téléphone", value: "+212 5XX-XXXXXX" },
-              { icon: Mail, label: "Email", value: "contact@lacaissepay.ma" },
-              { icon: MapPin, label: "Adresse", value: "Casablanca, Maroc" },
-            ].map((item) => (
-              <div key={item.label} className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-accent flex items-center justify-center shrink-0">
-                  <item.icon className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-bold text-sm mb-0.5">{item.label}</p>
-                  <p className="text-muted-foreground text-[0.925rem]">{item.value}</p>
-                </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl mx-auto"
+        >
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid sm:grid-cols-3 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="name" className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Nom & Prénom</Label>
+                <Input id="name" required maxLength={100} className="h-12 rounded-lg border-border bg-background" />
               </div>
-            ))}
-          </motion.div>
-        </div>
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Email</Label>
+                <Input id="email" type="email" required maxLength={255} className="h-12 rounded-lg border-border bg-background" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="phone" className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Téléphone</Label>
+                <Input id="phone" type="tel" required className="h-12 rounded-lg border-border bg-background" />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Volume de transactions par jour</Label>
+              <div className="grid grid-cols-3 gap-4">
+                <Select>
+                  <SelectTrigger className="h-12 rounded-lg border-border bg-background">
+                    <SelectValue placeholder="entre 200000 et 250888" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="0-50000">0 - 50 000 MAD</SelectItem>
+                    <SelectItem value="50000-200000">50 000 - 200 000 MAD</SelectItem>
+                    <SelectItem value="200000-500000">200 000 - 500 000 MAD</SelectItem>
+                    <SelectItem value="500000+">500 000+ MAD</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Select>
+                  <SelectTrigger className="h-12 rounded-lg border-border bg-background">
+                    <SelectValue placeholder="entre 290000 et 250888" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="0-50000">0 - 50 000 MAD</SelectItem>
+                    <SelectItem value="50000-200000">50 000 - 200 000 MAD</SelectItem>
+                    <SelectItem value="200000-500000">200 000 - 500 000 MAD</SelectItem>
+                    <SelectItem value="500000+">500 000+ MAD</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Select>
+                  <SelectTrigger className="h-12 rounded-lg border-border bg-background">
+                    <SelectValue placeholder="entre 290000 et 350888" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="0-50000">0 - 50 000 MAD</SelectItem>
+                    <SelectItem value="50000-200000">50 000 - 200 000 MAD</SelectItem>
+                    <SelectItem value="200000-500000">200 000 - 500 000 MAD</SelectItem>
+                    <SelectItem value="500000+">500 000+ MAD</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="message" className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Message</Label>
+              <Textarea id="message" rows={6} required maxLength={1000} className="rounded-lg border-border bg-background" />
+            </div>
+
+            <div>
+              <Button
+                type="submit"
+                size="lg"
+                className="px-16 h-14 text-lg rounded-full bg-gradient-brand shadow-brand hover:shadow-brand-lg transition-shadow duration-300 font-bold"
+                disabled={loading}
+              >
+                {loading ? "Envoi en cours..." : "Envoyez"}
+              </Button>
+            </div>
+          </form>
+        </motion.div>
       </div>
     </section>
   );
