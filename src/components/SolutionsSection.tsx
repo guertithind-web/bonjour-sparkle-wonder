@@ -1,85 +1,87 @@
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Wallet, CreditCard, QrCode, Smartphone, Globe, Link2 } from "lucide-react";
+import dashboardLaptop from "@/assets/dashboard-laptop.jpg";
+import carteBancaire from "@/assets/carte-bancaire.jpg";
+import tpeDevice from "@/assets/tpe-device.jpg";
+import phoneWhatsapp from "@/assets/phone-whatsapp.jpg";
+import ecommerceLaptop from "@/assets/ecommerce-laptop.jpg";
+import paymentLinkMsg from "@/assets/payment-link-msg.jpg";
 
 const solutions = [
   {
-    icon: Wallet,
     title: "Compte professionnel digital",
-    desc: "Gérez vos finances professionnelles avec un compte 100% en ligne, sans paperasse ni déplacements.",
+    desc: "Ouvrez votre compte pro en quelques minutes et accédez à une plateforme sécurisée, conçue pour optimiser vos flux financiers et accélérer votre croissance.",
+    image: dashboardLaptop,
+    alt: "Dashboard LaCaissePay - Compte professionnel",
   },
   {
-    icon: CreditCard,
-    title: "Carte bancaire",
-    desc: "Acceptez les paiements par carte bancaire facilement, en magasin comme en ligne.",
+    title: "Carte bancaire LaCaissePay",
+    desc: "Centralisez toutes vos dépenses, contrôlez vos paiements et gardez une visibilité totale grâce à une interface 100% digitale et intuitive.",
+    image: carteBancaire,
+    alt: "Cartes bancaires LaCaissePay",
   },
   {
-    icon: QrCode,
     title: "QR Code de paiement",
-    desc: "Proposez un paiement instantané par simple scan de QR Code depuis le smartphone de vos clients.",
+    desc: "Une technologie simple et efficace : vos clients scannent, vous encaissez instantanément. Idéal pour les commerces rapides et les services mobiles.",
+    image: phoneWhatsapp,
+    alt: "QR Code paiement mobile",
   },
   {
-    icon: Smartphone,
-    title: "Terminal de paiement (TPE)",
-    desc: "Un terminal moderne et compact pour encaisser vos clients en point de vente, partout au Maroc.",
+    title: "Terminal de paiement nouvelle génération",
+    desc: "Un TPE intelligent, compact et connecté, pensé pour des encaissements rapides, fiables et adaptés aux environnements à fort trafic.",
+    image: tpeDevice,
+    alt: "Terminal de paiement TPE LaCaissePay",
   },
   {
-    icon: Globe,
-    title: "Intégration e-commerce",
-    desc: "Connectez votre boutique WordPress ou votre site via notre API simple et bien documentée.",
+    title: "Intégration paiement e-commerce",
+    desc: "Activez le paiement en ligne sur votre site de commande grâce à une intégration simple via plugin WordPress ou API. Une solution flexible pour adapter LaCaissePay à votre parcours d'achat digital.",
+    image: ecommerceLaptop,
+    alt: "Intégration e-commerce WordPress",
   },
   {
-    icon: Link2,
-    title: "Lien de paiement",
-    desc: "Envoyez un lien de paiement par WhatsApp, SMS ou Email et recevez votre argent en un clic.",
+    title: "Lien de paiement instantané",
+    desc: "Transformez vos conversations WhatsApp, SMS ou email en transactions sécurisées. Un outil puissant pour les ventes à distance et les paiements rapides.",
+    image: paymentLinkMsg,
+    alt: "Lien de paiement WhatsApp",
   },
 ];
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
-};
-
 const SolutionsSection = () => {
   return (
-    <section id="solutions" className="py-24 md:py-36 bg-secondary/60">
+    <section id="solutions" className="py-24 md:py-36 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <p className="text-primary font-bold text-sm uppercase tracking-[0.2em] mb-4">Nos Solutions</p>
+        <div className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight">
-            Des solutions de paiement pour chaque besoin
+            Des solutions de paiement intelligentes
+            <br />
+            pour <span className="text-gradient">développer votre activité.</span>
           </h2>
-          <p className="text-muted-foreground mt-5 max-w-xl mx-auto text-lg">
-            Découvrez nos outils conçus pour simplifier vos encaissements et accélérer votre croissance.
-          </p>
         </div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.15 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"
-        >
-          {solutions.map((s) => (
-            <motion.div key={s.title} variants={item}>
-              <Card className="group h-full bg-card border border-border/60 hover:border-primary/25 rounded-2xl shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-400">
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center mb-6 group-hover:bg-gradient-brand transition-all duration-300">
-                    <s.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
-                  </div>
-                  <h3 className="text-lg font-bold mb-3">{s.title}</h3>
-                  <p className="text-muted-foreground text-[0.925rem] leading-relaxed">{s.desc}</p>
-                </CardContent>
-              </Card>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {solutions.map((s, i) => (
+            <motion.div
+              key={s.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="bg-card rounded-2xl border border-border/60 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group"
+            >
+              <div className="p-8 pb-4">
+                <h3 className="text-xl font-bold mb-3">{s.title}</h3>
+                <p className="text-muted-foreground text-[0.925rem] leading-relaxed">{s.desc}</p>
+              </div>
+              <div className="px-8 pb-8 flex justify-center items-center">
+                <img
+                  src={s.image}
+                  alt={s.alt}
+                  className="w-full max-h-64 object-contain rounded-xl"
+                  loading="lazy"
+                />
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

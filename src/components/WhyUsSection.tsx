@@ -1,42 +1,41 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Users, Zap, ShieldCheck, Layers, ArrowRight } from "lucide-react";
+import { Users, Zap, ShieldCheck, Layers } from "lucide-react";
 
 const reasons = [
   {
     icon: Users,
     title: "Conçu pour les professionnels marocains",
-    desc: "Adapté au marché local, aux réglementations et aux habitudes de paiement au Maroc.",
+    desc: "Auto-entrepreneurs, commerçants, indépendants : nous comprenons vos besoins.",
   },
   {
     icon: Zap,
     title: "Rapide et sans complications",
-    desc: "Inscription simple, activation rapide et support réactif à chaque étape.",
+    desc: "Pas de paperasse, pas de procédures lourdes. Tout est pensé pour vous simplifier la vie.",
   },
   {
     icon: ShieldCheck,
     title: "Sécurité maximale",
-    desc: "Vos transactions et données sont protégées par les standards de sécurité les plus élevés.",
+    desc: "Vos données et transactions sont protégées par les standards les plus avancés du secteur.",
   },
   {
     icon: Layers,
-    title: "Solution tout-en-un",
-    desc: "Un seul outil pour gérer vos paiements en magasin, en ligne et à distance.",
+    title: "Une solution tout-en-un",
+    desc: "Plus besoin de jongler entre plusieurs services : vos paiements, votre compte pro et votre gestion financière sont regroupés au même endroit.",
   },
 ];
 
 const WhyUsSection = () => {
   return (
-    <section id="avantages" className="py-24 md:py-36">
+    <section id="avantages" className="py-24 md:py-36 bg-secondary/60">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <p className="text-primary font-bold text-sm uppercase tracking-[0.2em] mb-4">Pourquoi nous</p>
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight">
-            Pourquoi choisir LaCaissePay ?
+            Pourquoi choisir <span className="text-gradient">LaCaissePay</span> ?
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-4xl mx-auto mb-16">
           {reasons.map((r, i) => (
             <motion.div
               key={r.title}
@@ -44,23 +43,22 @@ const WhyUsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="text-center group"
+              className="flex gap-5"
             >
-              <div className="w-18 h-18 w-[4.5rem] h-[4.5rem] rounded-2xl bg-accent flex items-center justify-center mx-auto mb-6 group-hover:bg-gradient-brand transition-all duration-300">
-                <r.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+              <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center shrink-0 mt-1">
+                <r.icon className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="font-bold text-lg mb-3">{r.title}</h3>
-              <p className="text-muted-foreground text-[0.925rem] leading-relaxed">{r.desc}</p>
+              <div>
+                <h3 className="font-bold text-lg mb-2">{r.title}</h3>
+                <p className="text-muted-foreground text-[0.925rem] leading-relaxed">{r.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="px-12 h-14 text-base rounded-xl bg-gradient-brand shadow-brand hover:shadow-brand-lg transition-shadow duration-300 font-bold gap-2.5" asChild>
-            <a href="#contact">
-              Je suis intéressé
-              <ArrowRight className="h-5 w-5" />
-            </a>
+          <Button size="lg" className="px-12 h-14 text-base rounded-full bg-gradient-brand shadow-brand hover:shadow-brand-lg transition-shadow duration-300 font-bold" asChild>
+            <a href="#contact">Je suis intéressé</a>
           </Button>
         </div>
       </div>

@@ -1,47 +1,33 @@
+import { Phone, Mail } from "lucide-react";
+
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background/80 py-16">
+    <footer className="bg-foreground text-background py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          <div>
-            <a href="#" className="text-2xl font-extrabold">
-              <span className="text-rose">LaCaisse</span><span className="text-background">Pay</span>
-            </a>
-            <p className="mt-5 text-sm text-background/50 leading-relaxed">
-              La solution de paiement digitale conçue pour les professionnels marocains.
-            </p>
+        <h3 className="text-2xl font-extrabold text-background mb-8">Informations</h3>
+
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10">
+            <div className="flex items-center gap-3">
+              <Phone className="h-5 w-5 text-rose" />
+              <div>
+                <p className="text-sm font-bold text-background uppercase tracking-wide">Appelez-nous</p>
+                <p className="text-sm text-background/60">(212) 5 20 65 75 40</p>
+                <p className="text-sm text-background/60">(212) 6 82 67 23 17</p>
+              </div>
+            </div>
           </div>
 
-          <div>
-            <h4 className="font-bold text-background mb-5 text-sm uppercase tracking-[0.15em]">Solutions</h4>
-            <ul className="space-y-3 text-sm text-background/50">
-              <li><a href="#solutions" className="hover:text-background transition-colors">Compte digital</a></li>
-              <li><a href="#solutions" className="hover:text-background transition-colors">Carte bancaire</a></li>
-              <li><a href="#solutions" className="hover:text-background transition-colors">QR Code</a></li>
-              <li><a href="#solutions" className="hover:text-background transition-colors">Terminal TPE</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-background mb-5 text-sm uppercase tracking-[0.15em]">Liens rapides</h4>
-            <ul className="space-y-3 text-sm text-background/50">
-              <li><a href="#avantages" className="hover:text-background transition-colors">Avantages</a></li>
-              <li><a href="#securite" className="hover:text-background transition-colors">Sécurité</a></li>
-              <li><a href="#contact" className="hover:text-background transition-colors">Contact</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-background mb-5 text-sm uppercase tracking-[0.15em]">Contact</h4>
-            <ul className="space-y-3 text-sm text-background/50">
-              <li>📞 +212 5XX-XXXXXX</li>
-              <li>📧 contact@lacaissepay.ma</li>
-              <li>📍 Casablanca, Maroc</li>
-            </ul>
+          <div className="flex items-center gap-3">
+            <Mail className="h-5 w-5 text-rose" />
+            <div>
+              <p className="text-sm font-bold text-background uppercase tracking-wide">Envoyez-nous un e-mail</p>
+              <p className="text-sm text-background/60">contact@lacaisse.ma</p>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-background/10 pt-8 text-center text-sm text-background/35">
+        <div className="border-t border-background/10 mt-10 pt-6 text-center text-sm text-background/35">
           © {new Date().getFullYear()} LaCaissePay. Tous droits réservés.
         </div>
       </div>
