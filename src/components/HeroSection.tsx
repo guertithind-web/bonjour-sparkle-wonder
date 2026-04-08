@@ -4,38 +4,45 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 pointer-events-none" />
-      <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative pt-36 pb-24 md:pt-52 md:pb-40 overflow-hidden">
+      {/* Decorative blobs */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent via-background to-background pointer-events-none" />
+      <div className="absolute -top-32 -right-32 w-[700px] h-[700px] rounded-full bg-gradient-brand opacity-[0.06] blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 -left-40 w-[500px] h-[500px] rounded-full bg-gradient-brand opacity-[0.04] blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 relative">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-3xl mx-auto text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-accent text-primary text-sm font-bold mb-10 border border-primary/10"
+          >
             🇲🇦 Solution 100% marocaine
-          </div>
+          </motion.div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.15] tracking-tight mb-8">
             Avec <span className="text-gradient">LaCaissePay</span>, vous disposez d'une solution de paiement{" "}
             <span className="text-gradient">moderne, flexible</span> et 100% digitale.
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
             Que vous vendiez en magasin, en ligne ou en déplacement, nous vous offrons les outils essentiels pour encaisser, suivre et développer votre activité.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="gap-2 text-base px-8 h-12 shadow-lg shadow-primary/25" asChild>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <Button size="lg" className="gap-2.5 text-base px-10 h-14 rounded-xl bg-gradient-brand shadow-brand hover:shadow-brand-lg transition-shadow duration-300 font-bold" asChild>
               <a href="#contact">
                 <MessageCircle className="h-5 w-5" />
                 Parler à un expert
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="gap-2 text-base px-8 h-12" asChild>
+            <Button size="lg" variant="outline" className="gap-2.5 text-base px-10 h-14 rounded-xl border-2 border-primary/20 hover:border-primary/40 hover:bg-accent font-bold" asChild>
               <a href="#contact">
                 Demander une démo
                 <ArrowRight className="h-5 w-5" />
