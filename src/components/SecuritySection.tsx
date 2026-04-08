@@ -10,14 +10,14 @@ const points = [
 
 const SecuritySection = () => {
   return (
-    <section id="securite" className="py-20 md:py-28 bg-secondary/50">
+    <section id="securite" className="py-24 md:py-36 bg-secondary/60">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-14">
-          <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Confiance</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+        <div className="text-center mb-16">
+          <p className="text-primary font-bold text-sm uppercase tracking-[0.2em] mb-4">Confiance</p>
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight">
             Sécurité & Confiance
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+          <p className="text-muted-foreground mt-5 max-w-xl mx-auto text-lg">
             Votre sécurité est notre priorité absolue. Nous investissons dans les meilleurs standards pour protéger votre activité.
           </p>
         </div>
@@ -30,13 +30,13 @@ const SecuritySection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-card rounded-2xl p-7 border border-border hover:border-primary/20 hover:shadow-lg transition-all duration-300 text-center"
+              className="bg-card rounded-2xl p-8 border border-border/60 hover:border-primary/20 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 text-center group"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
-                <p.icon className="h-7 w-7 text-primary" />
+              <div className="w-16 h-16 rounded-2xl bg-accent flex items-center justify-center mx-auto mb-6 group-hover:bg-gradient-brand transition-all duration-300">
+                <p.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
               </div>
-              <h3 className="font-bold mb-2">{p.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
+              <h3 className="font-bold text-lg mb-3">{p.title}</h3>
+              <p className="text-muted-foreground text-[0.925rem] leading-relaxed">{p.desc}</p>
             </motion.div>
           ))}
         </div>

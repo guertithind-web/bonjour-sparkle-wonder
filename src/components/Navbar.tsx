@@ -13,19 +13,19 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#" className="text-2xl font-extrabold text-primary tracking-tight">
-          LaCaisse<span className="text-foreground">Pay</span>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+      <div className="container mx-auto flex items-center justify-between h-[4.5rem] px-4">
+        <a href="#" className="text-2xl font-extrabold tracking-tight">
+          <span className="text-gradient">LaCaisse</span><span className="text-foreground">Pay</span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <a key={l.href} href={l.href} className="text-sm font-semibold text-muted-foreground hover:text-primary transition-colors duration-200">
               {l.label}
             </a>
           ))}
-          <Button size="sm" asChild>
+          <Button size="sm" className="rounded-xl px-6 bg-gradient-brand shadow-brand font-bold" asChild>
             <a href="#contact">Demander une démo</a>
           </Button>
         </div>
@@ -36,13 +36,13 @@ const Navbar = () => {
       </div>
 
       {open && (
-        <div className="md:hidden bg-background border-b border-border px-4 pb-4 space-y-3">
+        <div className="md:hidden bg-background border-b border-border/50 px-4 pb-5 space-y-3">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2">
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block text-sm font-semibold text-muted-foreground hover:text-primary transition-colors py-2.5">
               {l.label}
             </a>
           ))}
-          <Button size="sm" className="w-full" asChild>
+          <Button size="sm" className="w-full rounded-xl bg-gradient-brand font-bold" asChild>
             <a href="#contact" onClick={() => setOpen(false)}>Demander une démo</a>
           </Button>
         </div>
