@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import dashboardLaptop from "@/assets/dashboard-laptop.jpg";
-import carteBancaire from "@/assets/carte-bancaire.jpg";
+import compteProDigital from "@/assets/compte-pro-digital.png";
+import carteBancaireLcp from "@/assets/carte-bancaire-lcp.png";
 import tpeDevice from "@/assets/tpe-device.jpg";
 import phoneWhatsapp from "@/assets/phone-whatsapp.jpg";
 import ecommerceLaptop from "@/assets/ecommerce-laptop.jpg";
@@ -10,13 +10,13 @@ const solutions = [
   {
     title: "Compte professionnel digital",
     desc: "Ouvrez votre compte pro en quelques minutes et accédez à une plateforme sécurisée, conçue pour optimiser vos flux financiers et accélérer votre croissance.",
-    image: dashboardLaptop,
+    image: compteProDigital,
     alt: "Dashboard LaCaissePay - Compte professionnel",
   },
   {
     title: "Carte bancaire LaCaissePay",
     desc: "Centralisez toutes vos dépenses, contrôlez vos paiements et gardez une visibilité totale grâce à une interface 100% digitale et intuitive.",
-    image: carteBancaire,
+    image: carteBancaireLcp,
     alt: "Cartes bancaires LaCaissePay",
   },
   {
