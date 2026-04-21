@@ -39,7 +39,7 @@ const SecuritySection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {points.map((p, i) => (
             <motion.div
               key={p.title}
@@ -51,7 +51,7 @@ const SecuritySection = () => {
             >
               <div className="w-full aspect-square max-w-[220px] rounded-[2.5rem] bg-white flex items-center justify-center mb-6 shadow-sm">
                 {p.useImage ? (
-                  <img src={bankAlMaghrib} alt="Bank Al-Maghrib" className="w-24 h-20 object-contain" />
+                  <img src={bankAlMaghrib} alt="Bank Al-Maghrib" className="w-full h-full object-contain rounded-[2.5rem]" />
                 ) : (
                   <p.icon className="h-16 w-16 text-foreground" strokeWidth={1.5} />
                 )}
