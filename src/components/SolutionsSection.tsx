@@ -57,18 +57,12 @@ const SolutionsSection = () => {
           </h2>
         </div>
 
-        {/* Bento grid asymétrique : alternance de tailles */}
-        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[260px] gap-5">
+        {/* Grille 2 colonnes avec hauteurs asymétriques par ligne */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {solutions.map((s, i) => {
-            // Pattern : grande / petite / petite / grande / petite / grande
-            const spans = [
-              "md:col-span-2 md:row-span-2", // 0 - grande
-              "md:col-span-1 md:row-span-2", // 1 - étroite haute
-              "md:col-span-1 md:row-span-2", // 2 - étroite haute
-              "md:col-span-2 md:row-span-2", // 3 - grande
-              "md:col-span-2 md:row-span-2", // 4 - grande
-              "md:col-span-1 md:row-span-2", // 5 - étroite haute
-            ];
+            // Lignes 1 & 3 plus hautes, ligne 2 plus compacte (style maquette)
+            const row = Math.floor(i / 2);
+            const heights = ["min-h-[620px]", "min-h-[500px]", "min-h-[560px]"];
             return (
               <motion.div
                 key={s.title}
@@ -76,13 +70,13 @@ const SolutionsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`${spans[i]} bg-card rounded-2xl border border-primary/15 overflow-hidden flex flex-col hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300`}
+                className={`${heights[row]} bg-card rounded-2xl border border-primary/15 overflow-hidden flex flex-col hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300`}
               >
-                <div className="px-7 pt-7 pb-2">
-                  <h3 className="text-[1.25rem] md:text-[1.35rem] font-bold mb-2.5 tracking-tight">
+                <div className="px-8 pt-8 pb-2">
+                  <h3 className="text-[1.35rem] font-bold mb-3 tracking-tight">
                     {s.title}
                   </h3>
-                  <p className="text-muted-foreground text-[0.9rem] leading-relaxed">
+                  <p className="text-muted-foreground text-[0.925rem] leading-relaxed">
                     {s.desc}
                   </p>
                 </div>
@@ -90,7 +84,7 @@ const SolutionsSection = () => {
                   <img
                     src={s.image}
                     alt={s.alt}
-                    className="w-full h-full max-h-[300px] object-contain object-bottom"
+                    className="w-full h-full object-contain object-bottom"
                     loading="lazy"
                   />
                 </div>
