@@ -57,7 +57,7 @@ const SolutionsSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {solutions.map((s, i) => (
             <motion.div
               key={s.title}
@@ -65,19 +65,19 @@ const SolutionsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-card rounded-3xl border border-border overflow-hidden flex flex-col min-h-[460px] hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+              className="bg-card rounded-2xl border border-primary/15 overflow-hidden flex flex-col min-h-[520px] hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
             >
-              <div className="p-8 pb-2">
-                <h3 className="text-[1.35rem] font-bold mb-3 tracking-tight">{s.title}</h3>
-                <p className="text-muted-foreground text-[0.925rem] leading-relaxed max-w-md">
+              <div className="px-8 pt-8 pb-2">
+                <h3 className="text-[1.4rem] font-bold mb-3 tracking-tight">{s.title}</h3>
+                <p className="text-muted-foreground text-[0.925rem] leading-relaxed">
                   {s.desc}
                 </p>
               </div>
-              <div className="flex-1 flex justify-center items-end px-6 pt-4 overflow-hidden">
+              <div className="flex-1 flex justify-center items-end overflow-hidden">
                 <img
                   src={s.image}
                   alt={s.alt}
-                  className="w-full max-h-[260px] object-contain object-bottom"
+                  className="w-full max-h-[320px] object-contain object-bottom"
                   loading="lazy"
                 />
               </div>
