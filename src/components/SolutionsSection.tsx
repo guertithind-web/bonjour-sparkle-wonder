@@ -63,6 +63,8 @@ const SolutionsSection = () => {
             // Lignes 1 & 3 plus hautes, ligne 2 plus compacte (style maquette)
             const row = Math.floor(i / 2);
             const heights = ["min-h-[620px]", "min-h-[500px]", "min-h-[560px]"];
+            const isCards = s.image === solCards;
+            const isPaymentLink = s.image === solPaymentLink;
             return (
               <motion.div
                 key={s.title}
@@ -70,7 +72,9 @@ const SolutionsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`${heights[row]} bg-card rounded-2xl border border-primary/15 overflow-hidden flex flex-col hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300`}
+                className={`${heights[row]} bg-card rounded-2xl ${
+                  isCards ? "" : "border border-primary/15 hover:border-primary/30"
+                } overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300`}
               >
                 <div className="px-8 pt-8 pb-2">
                   <h3 className="text-[1.35rem] font-bold mb-3 tracking-tight">
@@ -84,7 +88,9 @@ const SolutionsSection = () => {
                   <img
                     src={s.image}
                     alt={s.alt}
-                    className="w-full h-full object-contain object-bottom"
+                    className={`${
+                      isPaymentLink ? "w-[115%] max-w-none scale-110" : "w-full"
+                    } h-full object-contain object-bottom`}
                     loading="lazy"
                   />
                 </div>
