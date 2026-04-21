@@ -70,7 +70,7 @@ const SolutionsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`${heights[row]} bg-card rounded-2xl ${
+                className={`min-h-[560px] bg-card rounded-2xl ${
                   isCards ? "" : "border border-primary/15 hover:border-primary/30"
                 } overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300`}
               >
