@@ -47,16 +47,16 @@ const SecuritySection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="text-center"
+              className="text-left"
             >
-              <div className="w-20 h-20 rounded-full bg-accent/80 border border-border/60 flex items-center justify-center mx-auto mb-6">
+              <div className="w-full aspect-square max-w-[220px] rounded-[2.5rem] bg-white flex items-center justify-center mb-6 shadow-sm">
                 {p.useImage ? (
-                  <img src={bankAlMaghrib} alt="Bank Al-Maghrib" className="w-14 h-10 object-contain" />
+                  <img src={bankAlMaghrib} alt="Bank Al-Maghrib" className="w-24 h-20 object-contain" />
                 ) : (
-                  <p.icon className="h-8 w-8 text-primary" />
+                  <p.icon className="h-16 w-16 text-foreground" strokeWidth={1.5} />
                 )}
               </div>
-              <h3 className="font-bold text-base mb-3">{p.title}</h3>
+              <h3 className="font-bold text-base mb-4">{p.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
             </motion.div>
           ))}
