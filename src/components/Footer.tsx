@@ -2,7 +2,7 @@ import { Phone, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-12">
+    <footer className="bg-primary text-primary-foreground py-12 rounded-t-[2rem]">
       <div className="container mx-auto px-4">
         <h3 className="text-2xl font-extrabold text-background mb-8">Informations</h3>
 
