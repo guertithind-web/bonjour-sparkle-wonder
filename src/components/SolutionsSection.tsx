@@ -60,9 +60,7 @@ const SolutionsSection = () => {
         {/* Grille 2 colonnes avec hauteurs asymétriques par ligne */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {solutions.map((s, i) => {
-            // Lignes 1 & 3 plus hautes, ligne 2 plus compacte (style maquette)
-            const row = Math.floor(i / 2);
-            const heights = ["min-h-[620px]", "min-h-[500px]", "min-h-[560px]"];
+            // Toutes les cartes ont la même hauteur (style maquette)
             const isCards = s.image === solCards;
             const isPaymentLink = s.image === solPaymentLink;
             return (
@@ -72,7 +70,7 @@ const SolutionsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`${heights[row]} bg-card rounded-2xl ${
+                className={`min-h-[560px] bg-card rounded-2xl ${
                   isCards ? "" : "border border-primary/15 hover:border-primary/30"
                 } overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300`}
               >
