@@ -61,6 +61,7 @@ const SolutionsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {solutions.map((s, i) => {
             const isPaymentLink = s.image === solPaymentLink;
+            const isSmaller = s.image === solDashboard || s.image === solCards;
             return (
               <motion.div
                 key={s.title}
@@ -68,7 +69,7 @@ const SolutionsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="min-h-[380px] bg-card rounded-2xl border border-primary/15 hover:border-primary/30 overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                className={`${isSmaller ? "min-h-[320px]" : "min-h-[380px]"} bg-card rounded-2xl border border-primary/15 hover:border-primary/30 overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300`}
               >
                 <div className="px-6 pt-6 pb-2">
                   <h3 className="text-[1.15rem] font-bold mb-2 tracking-tight">
