@@ -15,15 +15,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container mx-auto flex items-center justify-between h-20 px-4">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <div className="flex items-center gap-0.5">
-            <div className="w-8 h-8 bg-rose rounded-lg flex items-center justify-center">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M4 2L8 6L4 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M8 6L12 10L8 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.6"/>
-              </svg>
-            </div>
-          </div>
+        <a href="#" className="flex items-center gap-3">
+          <img src={logo} alt="LacaissePay" className="h-10 w-auto" />
           <div className="leading-none">
             <span className="text-xl font-extrabold text-white tracking-tight">Lacaisse</span>
             <br />
