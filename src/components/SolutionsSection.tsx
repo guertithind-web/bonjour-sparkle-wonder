@@ -47,10 +47,10 @@ const solutions = [
 
 const SolutionsSection = () => {
   return (
-    <section id="solutions" className="py-24 md:py-36 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight">
+    <section id="solutions" className="py-20 md:py-28 bg-background">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-[2.25rem] font-extrabold tracking-tight">
             Des solutions de paiement intelligentes
             <br />
             pour <span className="text-gradient">développer votre activité.</span>
@@ -58,7 +58,7 @@ const SolutionsSection = () => {
         </div>
 
         {/* Grille 2 colonnes avec hauteurs asymétriques par ligne */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {solutions.map((s, i) => {
             const isPaymentLink = s.image === solPaymentLink;
             return (
@@ -68,13 +68,13 @@ const SolutionsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="min-h-[560px] bg-card rounded-2xl border border-primary/15 hover:border-primary/30 overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                className="min-h-[460px] bg-card rounded-2xl border border-primary/15 hover:border-primary/30 overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
               >
-                <div className="px-8 pt-8 pb-2">
-                  <h3 className="text-[1.35rem] font-bold mb-3 tracking-tight">
+                <div className="px-6 pt-6 pb-2">
+                  <h3 className="text-[1.15rem] font-bold mb-2 tracking-tight">
                     {s.title}
                   </h3>
-                  <p className="text-muted-foreground text-[0.925rem] leading-relaxed">
+                  <p className="text-muted-foreground text-[0.875rem] leading-relaxed">
                     {s.desc}
                   </p>
                 </div>
