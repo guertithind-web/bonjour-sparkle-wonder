@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -54,43 +54,22 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-3">
               <Label className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Volume de transactions par jour</Label>
-              <div className="grid grid-cols-3 gap-4">
-                <Select>
-                  <SelectTrigger className="h-12 rounded-lg border-border bg-background">
-                    <SelectValue placeholder="entre 200000 et 250888" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="0-50000">0 - 50 000 MAD</SelectItem>
-                    <SelectItem value="50000-200000">50 000 - 200 000 MAD</SelectItem>
-                    <SelectItem value="200000-500000">200 000 - 500 000 MAD</SelectItem>
-                    <SelectItem value="500000+">500 000+ MAD</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Select>
-                  <SelectTrigger className="h-12 rounded-lg border-border bg-background">
-                    <SelectValue placeholder="entre 290000 et 250888" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="0-50000">0 - 50 000 MAD</SelectItem>
-                    <SelectItem value="50000-200000">50 000 - 200 000 MAD</SelectItem>
-                    <SelectItem value="200000-500000">200 000 - 500 000 MAD</SelectItem>
-                    <SelectItem value="500000+">500 000+ MAD</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Select>
-                  <SelectTrigger className="h-12 rounded-lg border-border bg-background">
-                    <SelectValue placeholder="entre 290000 et 350888" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="0-50000">0 - 50 000 MAD</SelectItem>
-                    <SelectItem value="50000-200000">50 000 - 200 000 MAD</SelectItem>
-                    <SelectItem value="200000-500000">200 000 - 500 000 MAD</SelectItem>
-                    <SelectItem value="500000+">500 000+ MAD</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+              <RadioGroup name="volume" className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="200000-293888" id="vol-1" />
+                  <Label htmlFor="vol-1" className="text-sm font-normal text-foreground cursor-pointer">entre 200000 et 293888</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="290000-293888" id="vol-2" />
+                  <Label htmlFor="vol-2" className="text-sm font-normal text-foreground cursor-pointer">entre 290000 et 293888</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="290000-350888" id="vol-3" />
+                  <Label htmlFor="vol-3" className="text-sm font-normal text-foreground cursor-pointer">entre 290000 et 350888</Label>
+                </div>
+              </RadioGroup>
             </div>
 
             <div className="space-y-2">
