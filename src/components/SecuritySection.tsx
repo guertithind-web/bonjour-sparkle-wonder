@@ -1,30 +1,36 @@
 import { motion } from "framer-motion";
-import { Eye, Lock, Landmark, Scale } from "lucide-react";
+import { Eye, Lock, Landmark, Scale, ShieldCheck } from "lucide-react";
 import bankAlMaghrib from "@/assets/bank-almaghrib.jpg";
 
 const points = [
   {
     icon: Eye,
     title: "Transparence totale",
-    desc: "Aucun frais caché, aucune surprise. Vous gardez une visibilité complète sur vos coûts et savez exactement ce que vous payez.",
+    desc: "Aucun frais caché. Vous savez exactement ce que vous payez.",
     useImage: false,
   },
   {
     icon: Lock,
     title: "Sécurité de niveau bancaire",
-    desc: "Vos fonds sont protégés selon les mêmes standards que les établissements financiers marocains. Notre infrastructure garantit une protection maximale de votre argent et de vos transactions.",
+    desc: "Vos fonds sont protégés selon les standards des établissements financiers marocains.",
     useImage: false,
   },
   {
     icon: Landmark,
-    title: "Conforme aux exigences de Bank Al-Maghrib",
-    desc: "LaCaissePay applique les directives réglementaires marocaines pour assurer fiabilité, transparence et conformité à chaque étape de vos opérations.",
+    title: "Conforme à Bank Al-Maghrib",
+    desc: "LaCaissePay applique les directives réglementaires marocaines à chaque opération.",
     useImage: true,
   },
   {
     icon: Scale,
     title: "Un cadre réglementé et supervisé",
-    desc: "Nous opérons dans le cadre d'un agent d'institution de paiement, en collaboration avec des partenaires financiers agréés au Maroc. Chaque transaction respecte les protocoles en vigueur.",
+    desc: "Agent d'institution de paiement en partenariat avec des acteurs financiers agréés au Maroc.",
+    useImage: false,
+  },
+  {
+    icon: ShieldCheck,
+    title: "Protection contre la fraude",
+    desc: "Détection et prévention des transactions suspectes en temps réel pour sécuriser chaque paiement.",
     useImage: false,
   },
 ];
