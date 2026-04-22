@@ -39,7 +39,7 @@ const SecuritySection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-4 gap-3 md:gap-5 max-w-5xl mx-auto">
+        <div className="grid grid-cols-4 gap-2 md:gap-4 max-w-3xl mx-auto">
           {points.map((p, i) => {
             const Icon = p.icon;
             return (
@@ -51,15 +51,15 @@ const SecuritySection = () => {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="text-center flex flex-col items-center"
               >
-                <div className="w-full aspect-square max-w-[140px] rounded-[1.5rem] bg-white flex items-center justify-center mb-3 shadow-sm">
+                <div className="w-full aspect-square max-w-[100px] rounded-2xl bg-white flex items-center justify-center mb-2 shadow-sm">
                   {p.useImage ? (
-                    <img src={bankAlMaghrib} alt="Bank Al-Maghrib" className="w-full h-full object-contain rounded-[1.5rem]" />
+                    <img src={bankAlMaghrib} alt="Bank Al-Maghrib" className="w-full h-full object-contain rounded-2xl" />
                   ) : Icon ? (
-                    <Icon className="h-10 w-10 md:h-12 md:w-12 text-foreground" strokeWidth={1.5} />
+                    <Icon className="h-7 w-7 md:h-9 md:w-9 text-foreground" strokeWidth={1.5} />
                   ) : null}
                 </div>
-                <h3 className="font-bold text-xs md:text-sm mb-2">{p.title}</h3>
-                <p className="text-muted-foreground text-[0.7rem] md:text-xs leading-relaxed">{p.desc}</p>
+                <h3 className="font-bold text-[0.7rem] md:text-xs mb-1">{p.title}</h3>
+                <p className="text-muted-foreground text-[0.6rem] md:text-[0.7rem] leading-snug">{p.desc}</p>
               </motion.div>
             );
           })}
