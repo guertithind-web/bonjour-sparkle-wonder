@@ -37,33 +37,33 @@ const points = [
 
 const SecuritySection = () => {
   return (
-    <section id="securite" className="py-24 md:py-36 bg-background">
+    <section id="securite" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight">
+        <div className="text-center mb-10 md:mb-14">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight">
             Vos fonds sont en <span className="text-gradient italic">sécurité</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-6">
           {points.map((p, i) => (
             <motion.div
               key={p.title}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
               className="text-left"
             >
-              <div className="w-full aspect-square max-w-[220px] rounded-[2.5rem] bg-white flex items-center justify-center mb-6 shadow-sm">
+              <div className="w-full aspect-square max-w-[160px] rounded-[2rem] bg-white flex items-center justify-center mb-4 shadow-sm">
                 {p.useImage ? (
-                  <img src={bankAlMaghrib} alt="Bank Al-Maghrib" className="w-full h-full object-contain rounded-[2.5rem]" />
+                  <img src={bankAlMaghrib} alt="Bank Al-Maghrib" className="w-full h-full object-contain rounded-[2rem]" />
                 ) : (
-                  <p.icon className="h-16 w-16 text-foreground" strokeWidth={1.5} />
+                  <p.icon className="h-12 w-12 text-foreground" strokeWidth={1.5} />
                 )}
               </div>
-              <h3 className="font-bold text-base mb-4">{p.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
+              <h3 className="font-bold text-sm md:text-base mb-2">{p.title}</h3>
+              <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">{p.desc}</p>
             </motion.div>
           ))}
         </div>
