@@ -42,7 +42,7 @@ const WhyUsSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-4xl mx-auto mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto mb-16">
           {reasons.map((r, i) => (
             <motion.div
               key={r.title}
@@ -50,7 +50,11 @@ const WhyUsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex gap-5"
+              className={`flex gap-5 p-6 ${
+                i % 2 === 0 ? "sm:border-r sm:border-border/60" : ""
+              } ${i < reasons.length - 2 ? "border-b border-border/60" : ""} ${
+                i === reasons.length - 2 ? "border-b sm:border-b-0 border-border/60" : ""
+              }`}
             >
               <div className="w-14 h-14 flex items-center justify-center shrink-0 mt-1">
                 <img src={r.image} alt={r.alt} className="w-full h-full object-contain" loading="lazy" />
