@@ -60,8 +60,6 @@ const SolutionsSection = () => {
         {/* Grille 2 colonnes avec hauteurs asymétriques par ligne */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {solutions.map((s, i) => {
-            // Toutes les cartes ont la même hauteur (style maquette)
-            const isCards = s.image === solCards;
             const isPaymentLink = s.image === solPaymentLink;
             return (
               <motion.div
@@ -70,9 +68,7 @@ const SolutionsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`min-h-[560px] bg-card rounded-2xl ${
-                  isCards ? "" : "border border-primary/15 hover:border-primary/30"
-                } overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300`}
+                className="min-h-[560px] bg-card rounded-2xl border border-primary/15 hover:border-primary/30 overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
               >
                 <div className="px-8 pt-8 pb-2">
                   <h3 className="text-[1.35rem] font-bold mb-3 tracking-tight">
