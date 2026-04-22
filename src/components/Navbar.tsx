@@ -15,13 +15,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container mx-auto flex items-center justify-between h-20 px-4">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3">
+        <a href="#" className="flex items-center">
           <img src={logo} alt="LacaissePay" className="h-10 w-auto" />
-          <div className="leading-none">
-            <span className="text-xl font-extrabold text-white tracking-tight">Lacaisse</span>
-            <br />
-            <span className="text-sm font-bold text-rose tracking-wide">Pay</span>
-          </div>
         </a>
 
         {/* Center links */}
