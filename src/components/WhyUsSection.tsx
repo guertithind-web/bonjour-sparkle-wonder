@@ -1,25 +1,32 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Users, Zap, ShieldCheck, Layers } from "lucide-react";
+import whyTie from "@/assets/why-tie.png";
+import whyRocket from "@/assets/why-rocket.png";
+import whyShield from "@/assets/why-shield.png";
+import whyHandHeart from "@/assets/why-hand-heart.png";
 
 const reasons = [
   {
-    icon: Users,
+    image: whyTie,
+    alt: "Cravate professionnelle",
     title: "Conçu pour les professionnels marocains",
     desc: "Auto-entrepreneurs, commerçants, indépendants : nous comprenons vos besoins.",
   },
   {
-    icon: Zap,
+    image: whyRocket,
+    alt: "Fusée rapide",
     title: "Rapide et sans complications",
     desc: "Pas de paperasse, pas de procédures lourdes. Tout est pensé pour vous simplifier la vie.",
   },
   {
-    icon: ShieldCheck,
+    image: whyShield,
+    alt: "Bouclier de sécurité",
     title: "Sécurité maximale",
     desc: "Vos données et transactions sont protégées par les standards les plus avancés du secteur.",
   },
   {
-    icon: Layers,
+    image: whyHandHeart,
+    alt: "Main tenant un cœur",
     title: "Une solution tout-en-un",
     desc: "Plus besoin de jongler entre plusieurs services : vos paiements, votre compte pro et votre gestion financière sont regroupés au même endroit.",
   },
@@ -45,8 +52,8 @@ const WhyUsSection = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="flex gap-5"
             >
-              <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center shrink-0 mt-1">
-                <r.icon className="h-6 w-6 text-primary" />
+              <div className="w-14 h-14 flex items-center justify-center shrink-0 mt-1">
+                <img src={r.image} alt={r.alt} className="w-full h-full object-contain" loading="lazy" />
               </div>
               <div>
                 <h3 className="font-bold text-lg mb-2">{r.title}</h3>
