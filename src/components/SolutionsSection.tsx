@@ -48,7 +48,7 @@ const solutions = [
 const SolutionsSection = () => {
   return (
     <section id="solutions" className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-[2.25rem] font-extrabold tracking-tight">
             Des solutions de paiement intelligentes
@@ -68,7 +68,7 @@ const SolutionsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="min-h-[460px] bg-card rounded-2xl border border-primary/15 hover:border-primary/30 overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                className="min-h-[380px] bg-card rounded-2xl border border-primary/15 hover:border-primary/30 overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
               >
                 <div className="px-6 pt-6 pb-2">
                   <h3 className="text-[1.15rem] font-bold mb-2 tracking-tight">
