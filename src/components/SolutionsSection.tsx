@@ -58,7 +58,7 @@ const SolutionsSection = () => {
         </div>
 
         {/* Grille 2 colonnes avec hauteurs asymétriques par ligne */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4">
           {solutions.map((s, i) => {
             const isPaymentLink = s.image === solPaymentLink;
             return (
