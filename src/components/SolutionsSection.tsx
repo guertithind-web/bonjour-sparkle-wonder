@@ -68,7 +68,7 @@ const SolutionsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="min-h-[320px] bg-card rounded-2xl border border-primary/15 hover:border-primary/30 overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                className="h-[320px] bg-card rounded-2xl border border-primary/15 hover:border-primary/30 overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
               >
                 <div className="px-6 pt-6 pb-2">
                   <h3 className="text-[1.15rem] font-bold mb-2 tracking-tight">
@@ -84,7 +84,7 @@ const SolutionsSection = () => {
                     alt={s.alt}
                     className={`${
                       isPaymentLink ? "w-[115%] max-w-none scale-110" : "w-full"
-                    } h-full object-contain object-bottom`}
+                    } max-h-full object-contain object-bottom`}
                     loading="lazy"
                   />
                 </div>
