@@ -17,10 +17,10 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section id="avantages" className="py-24 md:py-36 bg-secondary/60">
+    <section id="avantages" className="py-16 sm:py-24 md:py-36 bg-secondary/60">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight">
             {t("why.title.pre")} <span className="text-gradient">{t("why.title.brand")}</span> {t("why.title.suffix")}
           </h2>
         </div>

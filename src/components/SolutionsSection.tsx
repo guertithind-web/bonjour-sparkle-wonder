@@ -20,9 +20,9 @@ const SolutionsSection = () => {
   ];
 
   return (
-    <section id="solutions" className="py-20 md:py-28 bg-background">
+    <section id="solutions" className="py-16 sm:py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-[2.25rem] font-extrabold tracking-tight">
             {t("solutions.title.l1")}
             <br />
@@ -31,7 +31,7 @@ const SolutionsSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {solutions.map((s, i) => {
             const isPaymentLink = s.image === solPaymentLink;
             return (
@@ -41,7 +41,7 @@ const SolutionsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="h-[360px] bg-card border border-border rounded-2xl overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 transition-all duration-300"
+                className="h-[340px] sm:h-[360px] bg-card border border-border rounded-2xl overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 transition-all duration-300"
               >
                 <div className="px-6 pt-6 pb-2">
                   <h3 className="text-[1.15rem] font-bold mb-2 tracking-tight">
