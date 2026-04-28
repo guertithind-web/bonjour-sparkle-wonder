@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-wine via-primary to-rose text-primary-foreground py-12 rounded-t-[2rem]">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Col 1: Logo + description + socials */}
           <div>
             <img
@@ -41,26 +41,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Col 2: Solutions & Avantages (nav links) */}
-          <div>
-            <h3 className="text-2xl font-extrabold text-primary-foreground mb-6">
-              {t("nav.solutions")}
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#solutions" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-                  {t("nav.solutions")}
-                </a>
-              </li>
-              <li>
-                <a href="#avantages" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-                  {t("nav.advantages")}
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 3: Contact */}
+          {/* Col 2: Contact */}
           <div>
             <h3 className="text-2xl font-extrabold text-primary-foreground mb-6">{t("footer.info")}</h3>
 
