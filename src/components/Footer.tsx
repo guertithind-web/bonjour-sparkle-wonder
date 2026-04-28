@@ -4,26 +4,37 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-12 rounded-t-[2rem]">
       <div className="container mx-auto px-4">
-        <h3 className="text-2xl font-extrabold text-primary-foreground mb-8">Informations</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* Left: Présentation + coordonnées */}
+          <div className="space-y-6">
+            <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed max-w-xl">
+              <span className="font-bold text-primary-foreground">LacaissePay</span> – La solution de paiement digitale qui simplifie votre activité au Maroc.
+              Encaissez plus simplement, gérez votre argent plus intelligemment et gardez le contrôle total sur votre activité.
+            </p>
 
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10">
-            <div className="flex items-center gap-3">
-              <Phone className="h-5 w-5 text-primary-foreground" />
-              <div>
-                <p className="text-sm font-bold text-primary-foreground uppercase tracking-wide">Appelez-nous</p>
-                <p className="text-sm text-primary-foreground/60">(212) 5 20 65 75 40</p>
-                <p className="text-sm text-primary-foreground/60">(212) 6 82 67 23 17</p>
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 pt-2">
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-primary-foreground shrink-0" />
+                <div>
+                  <p className="text-sm font-bold text-primary-foreground uppercase tracking-wide">Appelez-nous</p>
+                  <p className="text-sm text-primary-foreground/70">(212) 5 20 65 75 40</p>
+                  <p className="text-sm text-primary-foreground/70">(212) 6 82 67 23 17</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-primary-foreground shrink-0" />
+                <div>
+                  <p className="text-sm font-bold text-primary-foreground uppercase tracking-wide">E-mail</p>
+                  <p className="text-sm text-primary-foreground/70">contact@lacaisse.ma</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <Mail className="h-5 w-5 text-primary-foreground" />
-            <div>
-              <p className="text-sm font-bold text-primary-foreground uppercase tracking-wide">Envoyez-nous un e-mail</p>
-              <p className="text-sm text-primary-foreground/60">contact@lacaisse.ma</p>
-            </div>
+          {/* Right: Informations title (kept) */}
+          <div className="md:text-right">
+            <h3 className="text-2xl font-extrabold text-primary-foreground mb-4">Informations</h3>
           </div>
         </div>
 
