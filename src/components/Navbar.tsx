@@ -1,11 +1,25 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useLang, type Lang } from "@/contexts/LanguageContext";
 import logo from "@/assets/lacaissepay-logo.png";
+
+const LANGS: { code: Lang; label: string; short: string }[] = [
+  { code: "fr", label: "Français", short: "Fr" },
+  { code: "ar", label: "العربية", short: "Ar" },
+  { code: "en", label: "English", short: "En" },
+];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { lang, setLang, t } = useLang();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -15,9 +29,39 @@ const Navbar = () => {
   }, []);
 
   const links = [
-    { label: "Solutions", href: "#solutions" },
-    { label: "Avantages", href: "#avantages" },
+    { label: t("nav.solutions"), href: "#solutions" },
+    { label: t("nav.advantages"), href: "#avantages" },
   ];
+
+  const current = LANGS.find((l) => l.code === lang) ?? LANGS[0];
+
+  const LangSwitcher = ({ mobile = false }: { mobile?: boolean }) => (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button
+          className={`inline-flex items-center gap-1.5 text-sm font-medium text-white/80 hover:text-white transition-colors ${
+            mobile ? "py-2" : ""
+          }`}
+          aria-label="Change language"
+        >
+          <Globe className="h-4 w-4" />
+          <span>{current.short}</span>
+          <ChevronDown className="h-3.5 w-3.5 opacity-70" />
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="min-w-[140px]">
+        {LANGS.map((l) => (
+          <DropdownMenuItem
+            key={l.code}
+            onClick={() => setLang(l.code)}
+            className={`cursor-pointer ${lang === l.code ? "font-bold" : ""}`}
+          >
+            {l.label}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
 
   return (
     <nav
@@ -45,9 +89,9 @@ const Navbar = () => {
         {/* Right side */}
         <div className="hidden md:flex items-center gap-4">
           <Button variant="outline" size="sm" className="rounded-full px-6 border-white/30 text-white hover:bg-white/10 font-semibold bg-transparent" asChild>
-            <a href="#contact">Demande de devis</a>
+            <a href="#contact">{t("nav.cta")}</a>
           </Button>
-          <span className="text-sm text-white/60 font-medium">Fr</span>
+          <LangSwitcher />
         </div>
 
         <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
@@ -63,8 +107,11 @@ const Navbar = () => {
             </a>
           ))}
           <Button size="sm" className="w-full rounded-xl bg-white text-primary hover:bg-white/90 font-bold" asChild>
-            <a href="#contact" onClick={() => setOpen(false)}>Demande de devis</a>
+            <a href="#contact" onClick={() => setOpen(false)}>{t("nav.cta")}</a>
           </Button>
+          <div className="pt-1">
+            <LangSwitcher mobile />
+          </div>
         </div>
       )}
     </nav>

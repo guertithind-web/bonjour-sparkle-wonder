@@ -1,41 +1,24 @@
 import { motion } from "framer-motion";
 import { Eye, Lock, Scale } from "lucide-react";
+import { useLang } from "@/contexts/LanguageContext";
 import bankAlMaghrib from "@/assets/bank-almaghrib.jpg";
 
-const points = [
-  {
-    icon: Eye,
-    title: "Transparence totale",
-    desc: "Aucun frais caché, aucune surprise. Vous gardez une visibilité complète sur vos coûts et savez exactement ce que vous payez.",
-    useImage: false,
-  },
-  {
-    icon: Lock,
-    title: "Sécurité de niveau bancaire",
-    desc: "Vos fonds sont protégés selon les mêmes standards que les établissements financiers marocains. Notre infrastructure garantit une protection maximale de votre argent et de vos transactions.",
-    useImage: false,
-  },
-  {
-    icon: null,
-    title: "Conforme aux exigences de Bank Al-Maghrib",
-    desc: "LacaissePay applique les directives réglementaires marocaines pour assurer fiabilité, transparence et conformité à chaque étape de vos opérations.",
-    useImage: true,
-  },
-  {
-    icon: Scale,
-    title: "Un cadre réglementé et supervisé",
-    desc: "Nous opérons dans le cadre d'un agent d'institution de paiement, en collaboration avec des partenaires financiers agréés au Maroc. Chaque transaction respecte les protocoles en vigueur.",
-    useImage: false,
-  },
-];
-
 const SecuritySection = () => {
+  const { t } = useLang();
+
+  const points = [
+    { key: "1", icon: Eye, useImage: false },
+    { key: "2", icon: Lock, useImage: false },
+    { key: "3", icon: null, useImage: true },
+    { key: "4", icon: Scale, useImage: false },
+  ];
+
   return (
     <section id="securite" className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-10">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            Vos fonds sont en <span className="text-gradient italic">sécurité</span>.
+            {t("sec.title.pre")} <span className="text-gradient italic">{t("sec.title.highlight")}</span>.
           </h2>
         </div>
 
@@ -44,7 +27,7 @@ const SecuritySection = () => {
             const Icon = p.icon;
             return (
               <motion.div
-                key={p.title}
+                key={p.key}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -58,8 +41,8 @@ const SecuritySection = () => {
                     <Icon className="h-10 w-10 sm:h-8 sm:w-8 md:h-10 md:w-10 text-foreground" strokeWidth={1.5} />
                   ) : null}
                 </div>
-                <h3 className="font-bold text-sm sm:text-xs md:text-sm mb-1.5">{p.title}</h3>
-                <p className="text-muted-foreground text-xs sm:text-[0.7rem] md:text-xs leading-snug">{p.desc}</p>
+                <h3 className="font-bold text-sm sm:text-xs md:text-sm mb-1.5">{t(`sec.${p.key}.title`)}</h3>
+                <p className="text-muted-foreground text-xs sm:text-[0.7rem] md:text-xs leading-snug">{t(`sec.${p.key}.desc`)}</p>
               </motion.div>
             );
           })}

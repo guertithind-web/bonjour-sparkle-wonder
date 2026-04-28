@@ -1,51 +1,34 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useLang } from "@/contexts/LanguageContext";
 import whyTie from "@/assets/why-tie.png";
 import whyRocket from "@/assets/why-rocket.png";
 import whyShield from "@/assets/why-shield.png";
 import whyHandHeart from "@/assets/why-hand-heart.png";
 
-const reasons = [
-  {
-    image: whyTie,
-    alt: "Cravate professionnelle",
-    title: "Conçu pour les professionnels marocains",
-    desc: "Auto-entrepreneurs, commerçants, indépendants : nous comprenons vos besoins.",
-  },
-  {
-    image: whyRocket,
-    alt: "Fusée rapide",
-    title: "Rapide et sans complications",
-    desc: "Pas de paperasse, pas de procédures lourdes. Tout est pensé pour vous simplifier la vie.",
-  },
-  {
-    image: whyShield,
-    alt: "Bouclier de sécurité",
-    title: "Sécurité maximale",
-    desc: "Vos données et transactions sont protégées par les standards les plus avancés du secteur.",
-  },
-  {
-    image: whyHandHeart,
-    alt: "Main tenant un cœur",
-    title: "Une solution tout-en-un",
-    desc: "Plus besoin de jongler entre plusieurs services : vos paiements, votre compte pro et votre gestion financière sont regroupés au même endroit.",
-  },
-];
-
 const WhyUsSection = () => {
+  const { t } = useLang();
+
+  const reasons = [
+    { key: "1", image: whyTie, alt: "Cravate professionnelle" },
+    { key: "2", image: whyRocket, alt: "Fusée rapide" },
+    { key: "3", image: whyShield, alt: "Bouclier de sécurité" },
+    { key: "4", image: whyHandHeart, alt: "Main tenant un cœur" },
+  ];
+
   return (
     <section id="avantages" className="py-24 md:py-36 bg-secondary/60">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight">
-            Pourquoi choisir <span className="text-gradient">LaCaissePay</span> ?
+            {t("why.title.pre")} <span className="text-gradient">{t("why.title.brand")}</span> {t("why.title.suffix")}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto mb-16">
           {reasons.map((r, i) => (
             <motion.div
-              key={r.title}
+              key={r.key}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -60,8 +43,8 @@ const WhyUsSection = () => {
                 <img src={r.image} alt={r.alt} className="w-full h-full object-contain" loading="lazy" />
               </div>
               <div>
-                <h3 className="font-bold text-lg mb-2">{r.title}</h3>
-                <p className="text-muted-foreground text-[0.925rem] leading-relaxed">{r.desc}</p>
+                <h3 className="font-bold text-lg mb-2">{t(`why.${r.key}.title`)}</h3>
+                <p className="text-muted-foreground text-[0.925rem] leading-relaxed">{t(`why.${r.key}.desc`)}</p>
               </div>
             </motion.div>
           ))}
@@ -69,7 +52,7 @@ const WhyUsSection = () => {
 
         <div className="text-center">
           <Button size="lg" className="px-12 h-14 text-base rounded-full bg-gradient-brand shadow-brand hover:shadow-brand-lg transition-shadow duration-300 font-bold" asChild>
-            <a href="#contact">Je suis intéressé</a>
+            <a href="#contact">{t("why.cta")}</a>
           </Button>
         </div>
       </div>
