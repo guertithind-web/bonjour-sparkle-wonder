@@ -5,7 +5,7 @@ import logo from "@/assets/lacaissepay-logo.png";
 const Footer = () => {
   const { t } = useLang();
   return (
-    <footer className="bg-primary text-primary-foreground py-12 rounded-t-[2rem]">
+    <footer className="bg-gradient-to-r from-wine via-primary to-rose text-primary-foreground py-12 rounded-t-[2rem]">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Col 1: Logo + description + socials */}
