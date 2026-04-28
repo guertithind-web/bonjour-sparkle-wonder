@@ -51,7 +51,7 @@ const WhyUsSection = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="px-12 h-14 text-base rounded-full bg-gradient-brand shadow-brand hover:shadow-brand-lg transition-shadow duration-300 font-bold" asChild>
+          <Button size="lg" className="px-8 sm:px-12 h-12 sm:h-14 text-sm sm:text-base rounded-full bg-gradient-brand shadow-brand hover:shadow-brand-lg transition-shadow duration-300 font-bold" asChild>
             <a href="#contact">{t("why.cta")}</a>
           </Button>
         </div>
