@@ -29,7 +29,7 @@ const translations: Record<Lang, Dict> = {
     "sol.3.title": "QR Code de paiement",
     "sol.3.desc":
       "Une technologie simple et efficace : vos clients scannent, vous encaissez instantanément. Idéal pour les commerces rapides et les services mobiles.",
-    "sol.4.title": "Terminal de paiement nouvelle génération",
+    "sol.4.title": "Terminal de paiement (Soft POS)",
     "sol.4.desc":
       "Un TPE intelligent, compact et connecté, pensé pour des encaissements rapides, fiables et adaptés aux environnements à fort trafic.",
     "sol.5.title": "Intégration paiement e-commerce",
@@ -114,7 +114,7 @@ const translations: Record<Lang, Dict> = {
     "sol.3.title": "Payment QR Code",
     "sol.3.desc":
       "A simple, efficient technology: your customers scan, you get paid instantly. Perfect for fast retail and mobile services.",
-    "sol.4.title": "Next-generation payment terminal",
+    "sol.4.title": "Payment terminal (Soft POS)",
     "sol.4.desc":
       "A smart, compact and connected POS, designed for fast and reliable transactions in high-traffic environments.",
     "sol.5.title": "E-commerce payment integration",
@@ -199,7 +199,7 @@ const translations: Record<Lang, Dict> = {
     "sol.3.title": "رمز QR للدفع",
     "sol.3.desc":
       "تقنية بسيطة وفعالة: يمسح عملاؤك الرمز، وتتلقى المدفوعات فورًا. مثالي للتجارة السريعة والخدمات المتنقلة.",
-    "sol.4.title": "محطة دفع من الجيل الجديد",
+    "sol.4.title": "محطة دفع (Soft POS)",
     "sol.4.desc":
       "جهاز TPE ذكي ومتصل ومدمج، مصمم لمعاملات سريعة وموثوقة في البيئات ذات الحركة العالية.",
     "sol.5.title": "تكامل الدفع للتجارة الإلكترونية",
