@@ -27,6 +27,10 @@ export default {
           DEFAULT: "hsl(var(--rose))",
           foreground: "hsl(var(--rose-foreground))",
         },
+        wine: {
+          DEFAULT: "hsl(var(--wine))",
+          foreground: "hsl(var(--wine-foreground))",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
