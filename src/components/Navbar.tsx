@@ -10,10 +10,10 @@ import {
 import { useLang, type Lang } from "@/contexts/LanguageContext";
 import logo from "@/assets/lacaissepay-logo.png";
 
-const LANGS: { code: Lang; label: string; short: string }[] = [
-  { code: "fr", label: "Français", short: "Fr" },
-  { code: "ar", label: "العربية", short: "Ar" },
-  { code: "en", label: "English", short: "En" },
+const LANGS: { code: Lang; label: string; short: string; flag: string }[] = [
+  { code: "fr", label: "Français", short: "Fr", flag: "🇫🇷" },
+  { code: "ar", label: "العربية", short: "Ar", flag: "🇲🇦" },
+  { code: "en", label: "English", short: "En", flag: "🇬🇧" },
 ];
 
 const Navbar = () => {
@@ -45,6 +45,7 @@ const Navbar = () => {
           aria-label="Change language"
         >
           <Globe className="h-4 w-4" />
+          <span className="text-base leading-none">{current.flag}</span>
           <span>{current.short}</span>
           <ChevronDown className="h-3.5 w-3.5 opacity-70" />
         </button>
@@ -54,9 +55,10 @@ const Navbar = () => {
           <DropdownMenuItem
             key={l.code}
             onClick={() => setLang(l.code)}
-            className={`cursor-pointer ${lang === l.code ? "font-bold" : ""}`}
+            className={`cursor-pointer gap-2 ${lang === l.code ? "font-bold" : ""}`}
           >
-            {l.label}
+            <span className="text-base leading-none">{l.flag}</span>
+            <span>{l.label}</span>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
