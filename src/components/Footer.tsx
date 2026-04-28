@@ -11,6 +11,27 @@ const Footer = () => {
               <span className="font-bold text-primary-foreground">LacaissePay</span> – La solution de paiement digitale qui simplifie votre activité au Maroc.
               Encaissez plus simplement, gérez votre argent plus intelligemment et gardez le contrôle total sur votre activité.
             </p>
+
+            <div className="flex items-center gap-3 mt-6">
+              <a
+                href="https://www.instagram.com/lacaissepay"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram LacaissePay"
+                className="h-10 w-10 rounded-full border border-primary-foreground/20 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 1.2.06 1.8.25 2.2.42.6.22 1 .49 1.5.97.5.5.75.9.97 1.5.17.4.36 1 .42 2.2.06 1.2.07 1.6.07 4.8s0 3.6-.07 4.8c-.06 1.2-.25 1.8-.42 2.2-.22.6-.49 1-.97 1.5-.5.5-.9.75-1.5.97-.4.17-1 .36-2.2.42-1.2.06-1.6.07-4.8.07s-3.6 0-4.8-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.22-1-.49-1.5-.97-.5-.5-.75-.9-.97-1.5-.17-.4-.36-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.8c.06-1.2.25-1.8.42-2.2.22-.6.49-1 .97-1.5.5-.5.9-.75 1.5-.97.4-.17 1-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5 0-4.7.07-1 .05-1.6.22-1.95.36-.5.2-.85.42-1.22.8-.38.37-.6.72-.8 1.22-.14.36-.31.95-.36 1.95C3 8.5 3 8.85 3 12s0 3.5.07 4.7c.05 1 .22 1.6.36 1.95.2.5.42.85.8 1.22.37.38.72.6 1.22.8.36.14.95.31 1.95.36 1.2.07 1.55.07 4.7.07s3.5 0 4.7-.07c1-.05 1.6-.22 1.95-.36.5-.2.85-.42 1.22-.8.38-.37.6-.72.8-1.22.14-.36.31-.95.36-1.95.07-1.2.07-1.55.07-4.7s0-3.5-.07-4.7c-.05-1-.22-1.6-.36-1.95-.2-.5-.42-.85-.8-1.22-.37-.38-.72-.6-1.22-.8-.36-.14-.95-.31-1.95-.36C15.5 4 15.15 4 12 4zm0 3.05a4.95 4.95 0 1 1 0 9.9 4.95 4.95 0 0 1 0-9.9zm0 1.8a3.15 3.15 0 1 0 0 6.3 3.15 3.15 0 0 0 0-6.3zm5.15-2.07a1.16 1.16 0 1 1 0 2.32 1.16 1.16 0 0 1 0-2.32z"/></svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/lacaissepay"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn LacaissePay"
+                className="h-10 w-10 rounded-full border border-primary-foreground/20 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.12 1.43-2.12 2.9V21H10V9z"/></svg>
+              </a>
+            </div>
           </div>
 
           {/* Right: Informations + coordonnées en dessous */}
