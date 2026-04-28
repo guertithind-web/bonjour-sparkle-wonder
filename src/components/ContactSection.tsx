@@ -58,16 +58,16 @@ const ContactSection = () => {
               <Label className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Volume de transactions par jour</Label>
               <RadioGroup name="volume" className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="200000-293888" id="vol-1" />
-                  <Label htmlFor="vol-1" className="text-sm font-normal text-foreground cursor-pointer">entre 200000 et 293888</Label>
+                  <RadioGroupItem value="0-20" id="vol-1" />
+                  <Label htmlFor="vol-1" className="text-sm font-normal text-foreground cursor-pointer">entre 0 et 20</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="290000-293888" id="vol-2" />
-                  <Label htmlFor="vol-2" className="text-sm font-normal text-foreground cursor-pointer">entre 290000 et 293888</Label>
+                  <RadioGroupItem value="20-50" id="vol-2" />
+                  <Label htmlFor="vol-2" className="text-sm font-normal text-foreground cursor-pointer">entre 20 et 50</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="290000-350888" id="vol-3" />
-                  <Label htmlFor="vol-3" className="text-sm font-normal text-foreground cursor-pointer">entre 290000 et 350888</Label>
+                  <RadioGroupItem value="50-plus" id="vol-3" />
+                  <Label htmlFor="vol-3" className="text-sm font-normal text-foreground cursor-pointer">entre 50 et plus</Label>
                 </div>
               </RadioGroup>
             </div>
