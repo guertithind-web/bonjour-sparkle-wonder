@@ -1,4 +1,4 @@
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -11,6 +11,27 @@ const Footer = () => {
               <span className="font-bold text-primary-foreground">LacaissePay</span> – La solution de paiement digitale qui simplifie votre activité au Maroc.
               Encaissez plus simplement, gérez votre argent plus intelligemment et gardez le contrôle total sur votre activité.
             </p>
+
+            <div className="flex items-center gap-3 mt-6">
+              <a
+                href="https://www.instagram.com/lacaissepay"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram LacaissePay"
+                className="h-10 w-10 rounded-full border border-primary-foreground/20 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/lacaissepay"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn LacaissePay"
+                className="h-10 w-10 rounded-full border border-primary-foreground/20 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           {/* Right: Informations + coordonnées en dessous */}
