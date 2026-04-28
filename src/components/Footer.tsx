@@ -13,7 +13,7 @@ const Footer = () => {
             <img
               src={logo}
               alt="LacaissePay"
-              className="h-12 w-auto mb-4 brightness-0 invert"
+              className="h-10 w-auto mb-4"
             />
             <p className="text-sm text-primary-foreground/80 leading-relaxed">
               <span className="font-bold text-primary-foreground">LacaissePay</span> {t("footer.intro")}
