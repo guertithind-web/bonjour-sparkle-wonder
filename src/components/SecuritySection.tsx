@@ -18,7 +18,7 @@ const SecuritySection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-10">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            {t("sec.title.pre")} <span className="text-gradient">{t("sec.title.highlight")}</span>
+            {t("sec.title.pre")} <span className="text-gradient">{t("sec.title.highlight")}</span>.
           </h2>
         </div>
 
