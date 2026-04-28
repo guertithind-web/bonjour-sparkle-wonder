@@ -34,7 +34,7 @@ const SecuritySection = () => {
     <section id="securite" className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-10">
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight">
             Vos fonds sont en <span className="text-gradient italic">sécurité</span>
           </h2>
         </div>
