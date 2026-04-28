@@ -25,19 +25,19 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-5xl mx-auto"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.15] tracking-tight text-white mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.15] tracking-tight text-white mb-6 sm:mb-8">
             {t("hero.title.with")}{" "}
-            <span className="inline-block bg-white/15 backdrop-blur-sm text-white px-5 py-1.5 rounded-2xl border border-white/20">
+            <span className="inline-block bg-white/15 backdrop-blur-sm text-white px-3 sm:px-5 py-1 sm:py-1.5 rounded-2xl border border-white/20">
               LacaissePay
             </span>
             {t("hero.title.rest")}
           </h1>
 
-          <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
             {t("hero.subtitle")}
           </p>
 
-          <Button size="lg" className="px-12 h-16 rounded-2xl bg-white text-primary hover:bg-white/90 font-bold text-lg shadow-lg" asChild>
+          <Button size="lg" className="px-8 sm:px-12 h-14 sm:h-16 rounded-2xl bg-white text-primary hover:bg-white/90 font-bold text-base sm:text-lg shadow-lg" asChild>
             <a href="#contact">{t("hero.cta")}</a>
           </Button>
         </motion.div>
