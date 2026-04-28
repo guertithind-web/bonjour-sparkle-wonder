@@ -1,15 +1,21 @@
 import { Phone, Mail } from "lucide-react";
 import { useLang } from "@/contexts/LanguageContext";
+import logo from "@/assets/lacaissepay-logo.png";
 
 const Footer = () => {
   const { t } = useLang();
   return (
     <footer className="bg-primary text-primary-foreground py-12 rounded-t-[2rem]">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Left: Présentation */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* Col 1: Logo + description + socials */}
           <div>
-            <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed max-w-xl">
+            <img
+              src={logo}
+              alt="LacaissePay"
+              className="h-12 w-auto mb-4 brightness-0 invert"
+            />
+            <p className="text-sm text-primary-foreground/80 leading-relaxed">
               <span className="font-bold text-primary-foreground">LacaissePay</span> {t("footer.intro")}
             </p>
 
@@ -35,11 +41,30 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Right: Informations + coordonnées en dessous */}
-          <div className="md:text-left">
+          {/* Col 2: Solutions & Avantages (nav links) */}
+          <div>
+            <h3 className="text-2xl font-extrabold text-primary-foreground mb-6">
+              {t("nav.solutions")}
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <a href="#solutions" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                  {t("nav.solutions")}
+                </a>
+              </li>
+              <li>
+                <a href="#avantages" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                  {t("nav.advantages")}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 3: Contact */}
+          <div>
             <h3 className="text-2xl font-extrabold text-primary-foreground mb-6">{t("footer.info")}</h3>
 
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-10">
+            <div className="flex flex-col gap-6">
               <div className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-primary-foreground shrink-0 mt-1" />
                 <div>
