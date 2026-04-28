@@ -41,7 +41,7 @@ const SolutionsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="h-[360px] bg-card rounded-2xl overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                className="h-[360px] bg-card border border-border rounded-2xl overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 transition-all duration-300"
               >
                 <div className="px-6 pt-6 pb-2">
                   <h3 className="text-[1.15rem] font-bold mb-2 tracking-tight">
