@@ -65,10 +65,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-to-r from-primary to-rose ${
         scrolled
-          ? "bg-[hsl(346,65%,22%)]/90 backdrop-blur-xl shadow-lg border-b border-white/10"
-          : "bg-transparent"
+          ? "shadow-lg border-b border-white/10 backdrop-blur-xl"
+          : ""
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-20 px-4">
@@ -100,7 +100,7 @@ const Navbar = () => {
       </div>
 
       {open && (
-        <div className="md:hidden bg-[hsl(346,65%,22%)]/95 backdrop-blur-xl border-b border-white/10 px-4 pb-5 space-y-3">
+        <div className="md:hidden bg-gradient-to-r from-primary to-rose backdrop-blur-xl border-b border-white/10 px-4 pb-5 space-y-3">
           {links.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block text-sm font-semibold text-white/70 hover:text-white transition-colors py-2.5">
               {l.label}
