@@ -87,6 +87,7 @@ const translations: Record<Lang, Dict> = {
     "footer.info": "Informations",
     "footer.callus": "Appelez-nous",
     "footer.email": "E-mail",
+    "footer.address": "Adresse",
     "footer.rights": "Tous droits réservés.",
   },
 
@@ -172,6 +173,7 @@ const translations: Record<Lang, Dict> = {
     "footer.info": "Information",
     "footer.callus": "Call us",
     "footer.email": "E-mail",
+    "footer.address": "Address",
     "footer.rights": "All rights reserved.",
   },
 
@@ -257,6 +259,7 @@ const translations: Record<Lang, Dict> = {
     "footer.info": "معلومات",
     "footer.callus": "اتصل بنا",
     "footer.email": "البريد الإلكتروني",
+    "footer.address": "العنوان",
     "footer.rights": "جميع الحقوق محفوظة.",
   },
 };

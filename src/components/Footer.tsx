@@ -1,4 +1,4 @@
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { useLang } from "@/contexts/LanguageContext";
 import logo from "@/assets/lacaissepay-logo.png";
 
@@ -79,6 +79,14 @@ const Footer = () => {
                 <div>
                   <p className="text-sm font-bold text-primary-foreground uppercase tracking-wide">{t("footer.email")}</p>
                   <p className="text-sm text-primary-foreground/70">contact@lacaisse.ma</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-primary-foreground shrink-0 mt-1" />
+                <div>
+                  <p className="text-sm font-bold text-primary-foreground uppercase tracking-wide">{t("footer.address")}</p>
+                  <p className="text-sm text-primary-foreground/70">1er étage n 102, immeuble box office, Florida parc, Bd Zoulikha Nasri, Casablanca</p>
                 </div>
               </div>
             </div>
